@@ -35,6 +35,7 @@ services:
     command: npm run dev
     volumes:
       - ./frontend/app:/app/app
+      - ./frontend/pages:/app/pages
     depends_on:
       - database
   webserver:

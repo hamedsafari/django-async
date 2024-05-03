@@ -1,4 +1,4 @@
 from django.urls import path
-from apps.chat.views import hello
+from apps.chat.views import content
 
-urlpatterns = [path("", hello, name="hello")]
+urlpatterns = [path("", content, name="content")]

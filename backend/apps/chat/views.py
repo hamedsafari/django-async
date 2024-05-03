@@ -1,5 +1,13 @@
-from django.http import HttpResponse
+import random
+import asyncio
+from django.http import StreamingHttpResponse
 
 
-def hello(request):
-    return HttpResponse("Hello World!")
+async def content_stream():
+    for char in "Hello World!":
+        yield char
+        await asyncio.sleep(random.randint(1, 3))
+
+
+async def content(request):
+    return StreamingHttpResponse(content_stream())
