@@ -1,0 +1,6 @@
+backend/.venv/
+backend/static/
+backend/media/
+frontend/node_modules
+frontend/.next
+.idea
