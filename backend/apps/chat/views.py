@@ -1,6 +1,7 @@
 import time
 import random
 import asyncio
+from asgiref.sync import sync_to_async
 from django.http import StreamingHttpResponse
 
 MESSAGE = "This is a sample message.\n"
@@ -14,6 +15,16 @@ def sync_content_stream():
 
 def sync_content(request):
     return StreamingHttpResponse(sync_content_stream())
+
+
+def sync_wait():
+    time.sleep(random.random())
+
+
+async def async_content_stream_with_sync_code_inside():
+    for char in MESSAGE:
+        yield char
+        await sync_to_async(sync_wait)()
 
 
 async def async_content_stream():
