@@ -39,7 +39,7 @@ async def async_content(request):
 
 
 async def render_template_nextjs_page(request):
-    return await render_nextjs_page(request, "chat/index.html")
+    return await render_nextjs_page(request, "django_nextjs/document_base.html")
 
 
 async def render_stream_nextjs_page(request):
