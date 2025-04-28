@@ -28,7 +28,7 @@ tomli==2.0.1
 Twisted==24.3.0
 txaio==23.1.1
 typing_extensions==4.11.0
-uWSGI==2.0.25.1
+uWSGI==2.0.29
 zope.interface==6.3
 gunicorn==23.0.0
 uvicorn==0.32.0

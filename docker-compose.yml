@@ -31,11 +31,8 @@ services:
     depends_on:
       - database
   frontend:
-    build: ./frontend
+    build: ./next-app-router
     command: npm start
-    volumes:
-      - ./frontend/app:/app/app
-      - ./frontend/pages:/app/pages
     depends_on:
       - database
   webserver:
