@@ -3,6 +3,7 @@ import random
 import asyncio
 from asgiref.sync import sync_to_async
 from django.http import StreamingHttpResponse
+from django_nextjs.views import stream_nextjs_page
 
 MESSAGE = "This is a sample message.\n"
 
@@ -35,3 +36,7 @@ async def async_content_stream():
 
 async def async_content(request):
     return StreamingHttpResponse(async_content_stream())
+
+
+async def render_nextjs_page(request):
+    return await stream_nextjs_page(request)

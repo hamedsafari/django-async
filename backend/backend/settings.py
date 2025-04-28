@@ -128,3 +128,6 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media/")
+NEXTJS_SETTINGS = {
+    "nextjs_server_url": "http://frontend:3000"
+}
