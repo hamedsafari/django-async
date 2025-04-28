@@ -7,7 +7,6 @@ cffi==1.16.0
 click==8.1.7
 constantly==23.10.4
 cryptography==42.0.5
-daphne==4.1.2
 Django==5.0.4
 hyperlink==21.0.0
 idna==3.7
@@ -31,3 +30,6 @@ txaio==23.1.1
 typing_extensions==4.11.0
 uWSGI==2.0.25.1
 zope.interface==6.3
+gunicorn==23.0.0
+uvicorn==0.32.0
+uvicorn-worker==0.2.0

@@ -19,9 +19,9 @@ services:
       - POSTGRES_PASSWORD=postgres
     depends_on:
       - database
-  backend-daphne:
+  backend-gunicorn:
     build: ./backend
-    command: daphne -b 0.0.0.0 -p 8000 backend.asgi:application
+    command: gunicorn backend.asgi -w 2 -b 0.0.0.0:8000 -k uvicorn.workers.UvicornWorker --log-level=debug
     volumes:
       - ./backend:/app
     environment:
@@ -48,7 +48,7 @@ services:
       - "8080:8080"
     depends_on:
       - backend
-      - backend-daphne
+      - backend-gunicorn
       - frontend
 
 volumes:
